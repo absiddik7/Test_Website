@@ -1,0 +1,22 @@
+name: Deploy Workflow
+
+on:
+  push:
+    branches:
+      - main # Replace with the branch you want to trigger the deployment from
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v2
+
+    - name: Deploy
+      run: |
+        # Add your deployment commands here
+        # For example, you might deploy to a server, a cloud platform, or a hosting service.
+        # Make sure to set up any necessary secrets or environment variables for your deployment.
+      env:
+        DEPLOYMENT_KEY: ${{ secrets.DEPLOYMENT_KEY }}
